@@ -16,29 +16,19 @@
         <button type="submit">Find Player!</button>
     </form>
 
-    <div id="playerCards">
+    <div>
         <% if (players && players.length> 0) { %>
             <% players.forEach(function(player) { %>
-                <div class="card">
+                <div>
                     <h2>
                         <%= player.first_name %>
                             <%= player.last_name %>
                     </h2>
                     <p>Position: <%= player.position %>
                     </p>
-                    <p>Height: <%= player.height %>
-                    </p>
-                    <p>Weight: <%= player.weight %> lbs</p>
-                    <p>Jersey Number: <%= player.jersey_number %>
-                    </p>
-                    <p>College: <%= player.college %>
-                    </p>
-                    <p>Country: <%= player.country %>
-                    </p>
-                    <p>Draft: <%= player.draft_year %> - Round <%= player.draft_round %>, Pick <%= player.draft_number
-                                    %>
-                    </p>
-                    <p class="team">Team: <%= player.team.full_name %> (<%= player.team.abbreviation %>)</p>
+                    <p>Height: <%= player.height %></p>
+                    <p>Jersey Number: <%= player.jersey_number %></p>
+                    <p>Team: <%= player.team.full_name %> (<%= player.team.abbreviation %>)</p>
                     <form action="/players" method="POST">
                         <input type="hidden" name="playerId" value="<%= player.id %>">
                         <button type="submit">Add Player</button>

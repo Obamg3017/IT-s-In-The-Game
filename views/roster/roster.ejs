@@ -26,17 +26,20 @@
         <% } else { %>
             <% if (players && players.length> 0) { %>
                 <h2>Roster Details</h2>
+                <form action="/roster?_method=DELETE" method="POST">
+                    <button type="submit">Delete <%= roster.name %></button>
+                </form>
                 <p>Total Points: <%= roster.totalPoints %>
                 </p>
                 <p>Total Rebounds: <%= roster.totalRebounds %>
                 </p>
                 <p>Total Assists: <%= roster.totalAssists %>
                 </p>
-
+                <a href="/players">Search Player</a>
                 <h2>Players</h2>
-                <div id="playerCards">
+                <div>
                     <% players.forEach(function(player) { %>
-                        <div class="card">
+                        <div>
                             <h3>
                                 <%= player.first_name %>
                                     <%= player.last_name %>
@@ -45,14 +48,7 @@
                             </p>
                             <p>Height: <%= player.height %>
                             </p>
-                            <p>Weight: <%= player.weight %> lbs</p>
-                            <p>Jersey Number: <%= player.jersey_number %>
-                            </p>
-                            <p>College: <%= player.college %>
-                            </p>
-                            <p>Country: <%= player.country %>
-                            </p>
-
+                            <p>Jersey Number: <%= player.jersey_number %></p>
                         </div>
                         <% }); %>
                 </div>

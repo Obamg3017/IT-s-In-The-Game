@@ -1,4 +1,5 @@
 import express from "express";
+import Roster from "../models/roster.js";
 import User from "../models/user.js";
 import { getSinglePlayer } from "../utilities/nbaApiConnection.js";
 
@@ -38,12 +39,16 @@ router.get("/", async (req, res) => {
       if (playerData) {
         playerDataArray.push(playerData.data); // Assuming player data is in `data`
       }
-    }
+      // Get player stats here
+      // Step1: Define the vars
 
+      // Step2: for each player get stats and add them to the
+    }
     // Render the roster with the player data
     res.render("../views/roster/roster.ejs", {
       players: playerDataArray,
       roster: user.roster,
+
       message: null,
     });
   } catch (error) {
@@ -51,5 +56,23 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+router.delete("/", async (req, res) => {
+  const sessionUser = req.session.user;
+  if (!sessionUser) {
+    return res.status(404).json({ error: "User not found" });
+  }
 
+  // Find the user by ID and populate their roster
+  let user = await User.findById(sessionUser._id).populate("roster");
+
+  if (!user) {
+    return res.status(404).json({ error: "User not found" });
+  }
+  if (!user.roster) {
+    return res.status(404).json({ error: "Roster not found" });
+  }
+
+  const deleteRoster = await Roster.findByIdAndDelete(user.roster._id);
+  res.redirect("/players");
+});
 export default router;

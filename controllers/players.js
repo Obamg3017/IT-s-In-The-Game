@@ -42,13 +42,23 @@ router.post("/", async (req, res) => {
 
     // Fetch player stats
     const playerStats = await getPlayerStats(playerId);
-    const { reb = 0, ast = 0, pts = 0 } = playerStats; // Default values to 0 if stats are missing
-    console.log(playerStats);
+    if (
+      !playerStats ||
+      !Array.isArray(playerStats.data) ||
+      playerStats.data.length === 0
+    ) {
+      return res.status(404).json({ error: "Player stats not found" });
+    }
+
+    const { reb = 0, ast = 0, pts = 0 } = playerStats.data[0]; // Extracting the stats
+
+
+    console.log(playerStats.data[0]);
     // Check if the user has a roster, if not, create one
     if (!user.roster) {
       const newRoster = new Roster({
         name: `${user.username}'s Roster`,
-        totalPoints: Number(pts), // Ensure these are numbers
+        totalPoints: Number(pts),
         totalRebounds: Number(reb),
         totalAssists: Number(ast),
         playerIDs: [playerId],
@@ -61,6 +71,17 @@ router.post("/", async (req, res) => {
       user.roster = savedRoster._id;
     } else {
       // If the roster already exists, just add the player ID and update stats
+      if(user.roster.playerIDs.length >= 5){
+      return res.status(404).json({ error: "You Have Added The Maximum Amount Of Players" });
+      //add alert here once you get go ahead from instructor
+
+      }
+      if (user.roster.playerIDs.includes(playerId)) {
+        return res
+          .status(404)
+          .json({ error: "This Player is already added" });
+        //add alert here once you get go ahead from instructor
+      }
       user.roster.playerIDs.push(playerId);
 
       // Ensure these fields are numbers before updating
