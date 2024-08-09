@@ -55,9 +55,7 @@ authRouter.post("/sign-in", async (req, res) => {
       res.send("Error, the password was wrong!");
     }
 
-    req.session.user = {
-      username: user.username,
-    };
+    req.session.user = user
 
     res.redirect("/");
   } catch (error) {

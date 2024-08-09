@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import playerSchema from "./player.js";
-
 
 const rosterSchema = new mongoose.Schema({
   name: {
@@ -19,9 +17,9 @@ const rosterSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  players: [playerSchema],
+  playerIDs: [{ type: String }],
 });
 
-const Roster = mongoose.model('Roster', rosterSchema)
+const Roster = mongoose.model("Roster", rosterSchema);
 
-export default Roster
+export default Roster;

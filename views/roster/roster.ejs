@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roster Details</title>
+    <link rel="stylesheet" href="../../public/css/styles.css">
+</head>
+
+<body>
+    <h1>
+        <% if (roster) { %>
+            <%= roster.name %>
+                <% } else { %>
+                    Your NBA Roster
+                    <% } %>
+
+    </h1>
+
+    <% if (message) { %>
+        <p>
+            <%= message %>
+        </p>
+        <% } else { %>
+            <% if (players && players.length> 0) { %>
+                <h2>Roster Details</h2>
+                <p>Total Points: <%= roster.totalPoints %>
+                </p>
+                <p>Total Rebounds: <%= roster.totalRebounds %>
+                </p>
+                <p>Total Assists: <%= roster.totalAssists %>
+                </p>
+
+                <h2>Players</h2>
+                <div id="playerCards">
+                    <% players.forEach(function(player) { %>
+                        <div class="card">
+                            <h3>
+                                <%= player.first_name %>
+                                    <%= player.last_name %>
+                            </h3>
+                            <p>Position: <%= player.position %>
+                            </p>
+                            <p>Height: <%= player.height %>
+                            </p>
+                            <p>Weight: <%= player.weight %> lbs</p>
+                            <p>Jersey Number: <%= player.jersey_number %>
+                            </p>
+                            <p>College: <%= player.college %>
+                            </p>
+                            <p>Country: <%= player.country %>
+                            </p>
+
+                        </div>
+                        <% }); %>
+                </div>
+                <% } else { %>
+                    <p>No players found in this roster.</p>
+                    <% } %>
+                        <% } %>
+</body>
+
+</html>

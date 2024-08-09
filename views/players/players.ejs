@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Players</title>
+    <link rel="stylesheet" href="../../public/css/player.css/styles.css">
+</head>
+
+<body>
+    <h1>NBA Player Search</h1>
+    <form action="/players/search" method="GET">
+        <input type="text" name="search" placeholder="Enter player's name" required>
+        <button type="submit">Find Player!</button>
+    </form>
+
+    <div id="playerCards">
+        <% if (players && players.length> 0) { %>
+            <% players.forEach(function(player) { %>
+                <div class="card">
+                    <h2>
+                        <%= player.first_name %>
+                            <%= player.last_name %>
+                    </h2>
+                    <p>Position: <%= player.position %>
+                    </p>
+                    <p>Height: <%= player.height %>
+                    </p>
+                    <p>Weight: <%= player.weight %> lbs</p>
+                    <p>Jersey Number: <%= player.jersey_number %>
+                    </p>
+                    <p>College: <%= player.college %>
+                    </p>
+                    <p>Country: <%= player.country %>
+                    </p>
+                    <p>Draft: <%= player.draft_year %> - Round <%= player.draft_round %>, Pick <%= player.draft_number
+                                    %>
+                    </p>
+                    <p class="team">Team: <%= player.team.full_name %> (<%= player.team.abbreviation %>)</p>
+                    <form action="/players" method="POST">
+                        <input type="hidden" name="playerId" value="<%= player.id %>">
+                        <button type="submit">Add Player</button>
+                    </form>
+                </div>
+                <% }); %>
+                    <% } else { %>
+                        <p>No players found.</p>
+                        <% } %>
+    </div>
+
+
+</body>
+
+</html>

@@ -6,15 +6,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
-    type: String,
-    required: true,
-  },
   password: {
     type: String,
     required: true,
   },
-  roster: rosterSchema,
+  roster: { type: mongoose.Schema.Types.ObjectId, ref: rosterSchema },
 });
 
 const User = mongoose.model("User", userSchema);
