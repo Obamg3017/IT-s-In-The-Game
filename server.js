@@ -9,6 +9,7 @@ import playerController from "./controllers/players.js";
 import rosterController from "./controllers/roster.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import bodyParser from "body-parser";
 
 
 dotenv.config();
@@ -25,6 +26,8 @@ mongoose.connection.on("connected", () => {
 });
 
 app.use(express.urlencoded({ extended: false }));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
 

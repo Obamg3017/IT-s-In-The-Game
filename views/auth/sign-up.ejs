@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="/public/css/sign-up/styles.css">
+    <link rel="stylesheet" href="/signup/style.css" >
 </head>
 <body>
-<h1>Create a new account!</h1>
-<form action="/auth/sign-up" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" name="confirmPassword" id="confirmPassword" />
-    <button type="submit">Sign up</button>
-</form>
+    <div id="signup-container">
+        <h1 id="signup-title">Create a new account!</h1>
+        <form id="signup-form" action="/auth/sign-up" method="POST">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" id="username" class="form-input" />
+
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" id="password" class="form-input" />
+
+            <label for="confirmPassword" class="form-label">Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" class="form-input" />
+
+            <button type="submit" id="signup-button">Sign up</button>
+        </form>
+    </div>
 </body>
+
 </html>

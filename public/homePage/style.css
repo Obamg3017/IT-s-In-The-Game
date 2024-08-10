@@ -1,67 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f7f7; /* Soft white background */
-    color: #004d4d; /* Dark teal text color */
+    background-color: #e0f3f3; 
+    color: #004d4d; 
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+#home-title {
+    color: #008080; 
+    font-size: 2.5em;
+    margin-bottom: 30px; 
 }
 
 #main-container {
     text-align: center;
-    padding: 20px;
-    background-color: #e0f0f0; /* Light teal background for the container */
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 150px; 
+    background-color: #e0f0f0; 
+    border-radius: 12px; 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); 
+    width: 700px; 
 }
 
-#main-container h1 {
-    color: #008080; /* Teal color for headings */
-    margin-bottom: 20px;
-    font-size: 2em;
+#main-container h2 {
+    color: #008080; 
+    margin-bottom: 30px; 
+    font-size: 2em; 
 }
 
 #sign-out-link, #sign-up-link, #sign-in-link {
-    color: #006666; /* Slightly darker teal for links */
+    color: #006666; 
     text-decoration: none;
     font-weight: bold;
-    margin: 10px;
+    margin: 15px; 
+    display: inline-block; 
 }
 
 #sign-out-link:hover, #sign-up-link:hover, #sign-in-link:hover {
-    color: #004d4d; /* Dark teal on hover */
+    color: #004d4d; 
 }
 
 #search-container {
-    margin-top: 30px;
+    margin-top: 40px; 
 }
 
 #search-button {
-    background-color: #008080; /* Teal button background */
-    color: white; /* White text on button */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
+    background-color: #008080; 
+    color: white; 
+    border: 2px solid #006666; 
+    padding: 15px 30px; 
+    border-radius: 10px; 
+    font-size: 1.2em; 
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 #search-button:hover {
-    background-color: #006666; /* Darker teal on hover */
+    background-color: #006666; 
+    border-color: #004d4d; 
 }
 
 #auth-links {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #auth-links a {
     display: block;
-    margin: 10px 0;
+    margin: 15px 0; 
+    padding: 15px 25px; 
+    background-color: #008080; 
+    color: white; 
+    border-radius: 10px; 
+    border: 2px solid #006666; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-button-link {
-    text-decoration: none;
+#auth-links a:hover {
+    background-color: #006666; 
+    border-color: #004d4d; 
 }
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #main-container {
+        width: 90%;
+        padding: 20px; 
+    }
+
+    #search-button, #auth-links a {
+        font-size: 1em; 
+        padding: 10px 15px; 
+    }
+}
+

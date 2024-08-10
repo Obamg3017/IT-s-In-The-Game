@@ -10,25 +10,27 @@
 </head>
 
 <body>
-    <div id="main-container">
-        <img src="" alt="">
-        <% if (user) { %>
-            <h1 id="welcome-message">Welcome, <%= user.username %>
-            </h1>
+    <div id="container">
+        <h1 id="home-title">Welcome</h1>
+        <div id="main-container">
+            <img src="" alt="">
+            <% if (user) { %>
+                <h2 id="welcome-message">Welcome, <%= user.username %>
+                </h2>
                 <div id="search-container">
                     <a href="/players" class="button-link"><button id="search-button">Search Players</button></a>
                 </div>
-            <p>
-                <a href="/auth/sign-out" id="sign-out-link">Sign out</a>
-            </p>
-        
-            <% } else { %>
-                <h1 id="welcome-message">Hello, Please Sign-Up.</h1>
-                <div id="auth-links">
-                    <a href="/auth/sign-up" id="sign-up-link">Sign up</a>
-                    <a href="/auth/sign-in" id="sign-in-link">Sign in</a>
-                </div>
-                <% } %>
+                <p>
+                    <a href="/auth/sign-out" id="sign-out-link">Sign out</a>
+                </p>
+                <% } else { %>
+                    <h2 id="welcome-message">IT'S IN THE GAME</h2>
+                    <div id="auth-links">
+                        <a href="/auth/sign-up" id="sign-up-link">Sign up</a>
+                        <a href="/auth/sign-in" id="sign-in-link">Sign in</a>
+                    </div>
+                    <% } %>
+        </div>
     </div>
 </body>
 
