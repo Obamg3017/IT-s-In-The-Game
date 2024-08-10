@@ -6,26 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="homepage/style.css">
 </head>
 
 <body>
-    <% if (user) { %>
-        <h1>Welcome, <%= user.username %>
-                <p>
-                    <a href="/auth/sign-out">sign out</a>
-                </p>
-                <div>
-                    <a href="/players"><button>Search Players</button></a>
+    <div id="main-container">
+        <img src="" alt="">
+        <% if (user) { %>
+            <h1 id="welcome-message">Welcome, <%= user.username %>
+            </h1>
+                <div id="search-container">
+                    <a href="/players" class="button-link"><button id="search-button">Search Players</button></a>
                 </div>
-                <% } else { %>
-                    <h1>Hello, Please Sign-Up.</h1>
-                    <a href="/auth/sign-up">sign up</a>
-                    <a href="/auth/sign-in">sign in</a>
-                    <% } %>
-
-                      
-                       
+            <p>
+                <a href="/auth/sign-out" id="sign-out-link">Sign out</a>
+            </p>
+        
+            <% } else { %>
+                <h1 id="welcome-message">Hello, Please Sign-Up.</h1>
+                <div id="auth-links">
+                    <a href="/auth/sign-up" id="sign-up-link">Sign up</a>
+                    <a href="/auth/sign-in" id="sign-in-link">Sign in</a>
+                </div>
+                <% } %>
+    </div>
 </body>
 
 </html>

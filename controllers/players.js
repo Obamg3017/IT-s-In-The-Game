@@ -42,6 +42,7 @@ router.post("/", async (req, res) => {
 
     // Fetch player stats
     const playerStats = await getPlayerStats(playerId);
+    console.log(playerStats)
     if (
       !playerStats ||
       !Array.isArray(playerStats.data) ||

@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f7f7; /* Soft white background */
+    color: #004d4d; /* Dark teal text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0f0f0; /* Light teal background for the container */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#main-container h1 {
+    color: #008080; /* Teal color for headings */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#sign-out-link, #sign-up-link, #sign-in-link {
+    color: #006666; /* Slightly darker teal for links */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#sign-out-link:hover, #sign-up-link:hover, #sign-in-link:hover {
+    color: #004d4d; /* Dark teal on hover */
+}
+
+#search-container {
+    margin-top: 30px;
+}
+
+#search-button {
+    background-color: #008080; /* Teal button background */
+    color: white; /* White text on button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #006666; /* Darker teal on hover */
+}
+
+#auth-links {
+    margin-top: 20px;
+}
+
+#auth-links a {
+    display: block;
+    margin: 10px 0;
+}
+
+button-link {
+    text-decoration: none;
+}

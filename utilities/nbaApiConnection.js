@@ -22,6 +22,8 @@ const getSearchPlayers = async (search) => {
 
   return response.json();
 };
+
+// get single player
 const getSinglePlayer = async (playerId) => {
   const path = `/players/${playerId}`;
   const response = await fetch(baseUrl + path, {
@@ -32,6 +34,7 @@ const getSinglePlayer = async (playerId) => {
 
   return response.json();
 };
+
 // GET /stats
 const getPlayerStats = async (playerID) => {
   console.log(playerID)

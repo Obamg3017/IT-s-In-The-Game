@@ -29,6 +29,11 @@
                 <form action="/roster?_method=DELETE" method="POST">
                     <button type="submit">Delete <%= roster.name %></button>
                 </form>
+                <form action="/roster?_method=PUT" method="POST">
+                    <p>Type new name</p>
+                    <input type="text" name="rosterName" required>
+                    <button type="submit">Update <%= roster.name %></button>
+                </form>
                 <p>Total Points: <%= roster.totalPoints %>
                 </p>
                 <p>Total Rebounds: <%= roster.totalRebounds %>
@@ -48,7 +53,8 @@
                             </p>
                             <p>Height: <%= player.height %>
                             </p>
-                            <p>Jersey Number: <%= player.jersey_number %></p>
+                            <p>Jersey Number: <%= player.jersey_number %>
+                            </p>
                         </div>
                         <% }); %>
                 </div>

@@ -75,4 +75,30 @@ router.delete("/", async (req, res) => {
   const deleteRoster = await Roster.findByIdAndDelete(user.roster._id);
   res.redirect("/players");
 });
+
+router.put("/", async (req, res) => {
+  const sessionUser = req.session.user;
+  const { rosterName } = req.body;
+
+  if (!sessionUser) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  // Find the user by ID and populate their roster
+  let user = await User.findById(sessionUser._id).populate("roster");
+
+  if (!user) {
+    return res.status(404).json({ error: "User not found" });
+  }
+  if (!user.roster) {
+    return res.status(404).json({ error: "Roster not found" });
+  }
+
+  const updateRosterName = await Roster.findByIdAndUpdate(
+    user.roster._id,
+    { name: rosterName },
+    { new: true } // This option returns the updated document
+  );
+  res.redirect("/roster");
+});
 export default router;
