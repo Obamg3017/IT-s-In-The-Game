@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="homepage/style.css">
+    <link rel="stylesheet" href="partials/style.css">
 </head>
-
 <body>
+    <header>
+        <%- include('partials/navbar') %>
+    </header>
     <div id="container">
-        <h1 id="home-title">Welcome</h1>
         <div id="main-container">
             <img src="" alt="">
             <% if (user) { %>
@@ -20,9 +22,7 @@
                 <div id="search-container">
                     <a href="/players" class="button-link"><button id="search-button">Search Players</button></a>
                 </div>
-                <p>
-                    <a href="/auth/sign-out" id="sign-out-link">Sign out</a>
-                </p>
+               
                 <% } else { %>
                     <h2 id="welcome-message">IT'S IN THE GAME</h2>
                     <div id="auth-links">
