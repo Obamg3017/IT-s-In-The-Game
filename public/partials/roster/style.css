@@ -60,6 +60,8 @@ body, .main-content {
     padding: 5px 10px;
     border-radius: 11px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 10px;
+    font-weight: bold;
 }
 
 #sign-out-link:hover {
