@@ -6,62 +6,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roster Details</title>
-    <link rel="stylesheet" href="../../public/css/styles.css">
+    <link rel="stylesheet" href="/roster/style.css">
 </head>
 
 <body>
-    <h1>
-        <% if (roster) { %>
-            <%= roster.name %>
-                <% } else { %>
-                    Your NBA Roster
-                    <% } %>
+    <div id="roster-container">
+        <h1>
+            <% if (roster) { %>
+                <%= roster.name %>
+                    <% } else { %>
+                        Your NBA Roster
+                        <% } %>
+        </h1>
 
-    </h1>
-
-    <% if (message) { %>
-        <p>
-            <%= message %>
-        </p>
-        <% } else { %>
-            <% if (players && players.length> 0) { %>
-                <h2>Roster Details</h2>
-                <form action="/roster?_method=DELETE" method="POST">
-                    <button type="submit">Delete <%= roster.name %></button>
-                </form>
-                <form action="/roster?_method=PUT" method="POST">
-                    <p>Type new name</p>
-                    <input type="text" name="rosterName" required>
-                    <button type="submit">Update <%= roster.name %></button>
-                </form>
-                <p>Total Points: <%= roster.totalPoints %>
-                </p>
-                <p>Total Rebounds: <%= roster.totalRebounds %>
-                </p>
-                <p>Total Assists: <%= roster.totalAssists %>
-                </p>
-                <a href="/players">Search Player</a>
-                <h2>Players</h2>
-                <div>
-                    <% players.forEach(function(player) { %>
-                        <div>
-                            <h3>
-                                <%= player.first_name %>
-                                    <%= player.last_name %>
-                            </h3>
-                            <p>Position: <%= player.position %>
+        <% if (message) { %>
+            <p class="message">
+                <%= message %>
+            </p>
+            <% } else { %>
+                <% if (players && players.length> 0) { %>
+                    <div id="roster-details">
+                        <form action="/roster?_method=PUT" method="POST">
+                            <input type="text" placeholder="enter new roster name" name="rosterName" required>
+                            <button class="action-button update-button" type="submit">Update The Name Of Your
+                                Roster</button>
+                        </form>
+                        <div id="stats-container">
+                            <p>Total Points: <%= roster.totalPoints %>
                             </p>
-                            <p>Height: <%= player.height %>
+                            <p>Total Rebounds: <%= roster.totalRebounds %>
                             </p>
-                            <p>Jersey Number: <%= player.jersey_number %>
+                            <p>Total Assists: <%= roster.totalAssists %>
                             </p>
                         </div>
-                        <% }); %>
-                </div>
-                <% } else { %>
-                    <p>No players found in this roster.</p>
-                    <% } %>
+                    </div>
+                    <a class="search-link" href="/players">Search Player</a>
+
+                    <h2>Your Starting 5</h2>
+                    <div id="players-grid">
+                        <% players.forEach(function(player) { %>
+                            <div class="player-card">
+                                <img src="/roster/assets/NBAlogo1.png" alt="Player Image">
+                                <h3>
+                                    <%= player.first_name %>
+                                        <%= player.last_name %>
+                                </h3>
+                                <p>Position: <%= player.position %>
+                                </p>
+                                <p>Height: <%= player.height %>
+                                </p>
+                                <p>Jersey Number: <%= player.jersey_number %>
+                                </p>
+                            </div>
+                            <% }); %>
+                    </div>
+
+                    <form action="/roster?_method=DELETE" method="POST">
+                        <button class="action-button delete-button" type="submit">Delete <%= roster.name %></button>
+                    </form>
+                    <% } else { %>
+                        <p class="message">No players found in this roster.</p>
                         <% } %>
+                            <% } %>
+    </div>
 </body>
+
+
+
+
 
 </html>

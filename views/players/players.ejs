@@ -6,41 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Players</title>
-    <link rel="stylesheet" href="../../public/css/player.css/styles.css">
+    <link rel="stylesheet" href="/players/style.css">
 </head>
 
 <body>
-    <h1>NBA Player Search</h1>
-    <form action="/players/search" method="GET">
-        <input type="text" name="search" placeholder="Enter player's name" required>
-        <button type="submit">Find Player!</button>
-    </form>
+    <div id="container">
+        <h1 id="player-search-title">Search NBA Player</h1>
+        <form id="player-search-form" action="/players/search" method="GET">
+            <input type="text" name="search" id="search-input" placeholder="Enter player's name" required>
+            <button type="submit" id="search-button">Find Player!</button>
+        </form>
 
-    <div>
-        <% if (players && players.length> 0) { %>
-            <% players.forEach(function(player) { %>
-                <div>
-                    <h2>
-                        <%= player.first_name %>
-                            <%= player.last_name %>
-                    </h2>
-                    <p>Position: <%= player.position %>
-                    </p>
-                    <p>Height: <%= player.height %></p>
-                    <p>Jersey Number: <%= player.jersey_number %></p>
-                    <p>Team: <%= player.team.full_name %> (<%= player.team.abbreviation %>)</p>
-                    <form action="/players" method="POST">
-                        <input type="hidden" name="playerId" value="<%= player.id %>">
-                        <button type="submit">Add Player</button>
-                    </form>
-                </div>
-                <% }); %>
-                    <% } else { %>
-                        <p>No players found.</p>
-                        <% } %>
+        <div id="players-list">
+            <% if (players && players.length> 0) { %>
+                <% players.forEach(function(player) { %>
+                    <div class="player-card">
+                        <h2 class="player-name">
+                            <%= player.first_name %>
+                                <%= player.last_name %>
+                        </h2>
+                        <p class="player-detail">Position: <%= player.position %>
+                        </p>
+                        <p class="player-detail">Height: <%= player.height %>
+                        </p>
+                        <p class="player-detail">Jersey Number: <%= player.jersey_number %>
+                        </p>
+                        <p class="player-detail">Team: <%= player.team.full_name %> (<%= player.team.abbreviation %>)
+                        </p>
+                        <form action="/players" method="POST" class="add-player-form">
+                            <input type="hidden" name="playerId" value="<%= player.id %>">
+                            <button type="submit" class="add-player-button">Add Player</button>
+                        </form>
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            <p id="no-players-found">No players found.</p>
+                            <% } %>
+        </div>
     </div>
-
-
 </body>
+
 
 </html>

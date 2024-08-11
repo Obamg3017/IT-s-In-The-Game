@@ -1,0 +1,104 @@
+/* Basic reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0f0f0; /* Soft white background */
+    color: #004d4d; /* Dark teal text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure content fits within the viewport */
+    padding: 20px; /* Add padding to prevent content from being cut off */
+}
+
+#container {
+    text-align: center;
+    width: 100%;
+    max-width: 1200px; /* Limit the max-width for readability */
+    margin: auto;
+}
+
+h1 {
+    color: #008080; /* Teal color for the title */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid #006666;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: #008080; /* Teal button background */
+    color: white; /* White text on button */
+    border: 3px solid #006666;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: medium;
+}
+
+button[type="submit"]:hover {
+    background-color: #006666; /* Darker teal on hover */
+    border-color: #004d4d; /* Dark teal border on hover */
+}
+
+div {
+    margin-bottom: 20px;
+    padding: 50px;
+    background-color: #e0f0f0; /* Light teal background for player details */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #008080; /* Teal color for player names */
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #004d4d; /* Dark teal for player details */
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input[type="text"] {
+        width: 90%; /* Adjust input width for smaller screens */
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
