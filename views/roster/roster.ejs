@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roster Details</title>
     <link rel="stylesheet" href="/roster/style.css">
+    <link rel="stylesheet" href="../partials/roster/style.css">
 </head>
 
 <body>
+<header>
+    <%- include('../partials/navbar') %>
+</header>
     <div id="roster-container">
+        
         <h1>
             <% if (roster) { %>
                 <%= roster.name %>

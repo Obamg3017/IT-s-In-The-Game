@@ -1,0 +1,125 @@
+body, .main-content {
+    padding-top: 90px; 
+}
+
+#main-nav {
+    background-color: #00bfae;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000; 
+}
+
+#nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding-right: 20px; 
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: #00a89e;
+    color: white;
+}
+
+#sign-out-container {
+    margin-left: auto; 
+}
+
+#sign-out-link {
+    color: rgb(233, 219, 219);
+    border: 2px solid rgb(233, 219, 219);
+    padding: 5px 10px;
+    border-radius: 11px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#sign-out-link:hover {
+    background-color: rgb(233, 219, 219);
+    color: rgb(221, 191, 136);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #main-nav {
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    #nav-container {
+        justify-content: flex-start; 
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0; 
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-item {
+        margin: 1px 0;
+    }
+
+    #sign-out-container {
+        
+        margin-right: 10px;
+        align-self: flex-start; 
+        display: flex; 
+        flex-direction: row;
+        margin-bottom: 1px;
+        margin-top: -40px;
+    }
+
+    #sign-out-link {
+        align-self: flex-start;
+        margin-bottom: 10px;
+        align-items:flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-link {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    #sign-out-link {
+        padding: 5px 8px;
+    }
+
+    #main-nav {
+        padding: 10px;
+    }
+}
+

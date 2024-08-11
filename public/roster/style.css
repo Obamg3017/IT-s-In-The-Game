@@ -130,7 +130,7 @@ input[type="text"] {
 
 @media (max-width: 600px) {
     #players-grid {
-        grid-template-columns: 1fr; /* Single column grid for small screens */
+        grid-template-columns: 1fr; 
     }
 
     #stats-container {
@@ -140,6 +140,10 @@ input[type="text"] {
 
     #stats-container p {
         margin-bottom: 10px;
+    }
+
+    #roster-container{
+        margin-top: 50px;
     }
 }
 
