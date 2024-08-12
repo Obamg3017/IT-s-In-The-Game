@@ -43,8 +43,6 @@ app.use(
 
 
 
-
-
 //Route
 
 app.get("/", async (req, res) => {

@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
     players: playerData.data,
   });
 });
-// Route to handle search queries
+// Route to handle search queries.
 router.get("/search", async (req, res) => {
   const query = req.query.search.toLowerCase();
 
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
     console.log(sessionUser);
     console.log(playerId);
 
-    // Find the user by their ID
+    // Find the user by their ID.
     if (!sessionUser) {
       return res.status(404).json({ error: "User not found" });
     }
@@ -40,7 +40,7 @@ router.post("/", async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
 
-    // Fetch player stats
+    // Fetch player stats.
     const playerStats = await getPlayerStats(playerId);
     console.log(playerStats)
     if (
@@ -105,4 +105,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+//Resources that were referenced for this project
+// 1. https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
+// 2. https://www.youtube.com/watch?v=EkQc-8uzxIA
+// 3. Stack Overflow
+// 4. Reading Documentation on api website https://docs.balldontlie.io/
+// 5. ChatGPT for explaining how to implement API and to also add total stats in roster.ejs 
+// 6. Reaching out for help with GA staff/instructor 
+// 7. Reaching out for help in communities that I am a part of. ie: BIT, Code & Coffee, and Brilliant-Black-Minds 
+// 8. https://www.youtube.com/watch?v=AGWwa25ZlRY (assisted me with try & catch/res.status(404) error handling)
 export default router;

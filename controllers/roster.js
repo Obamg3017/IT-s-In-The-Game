@@ -35,14 +35,10 @@ router.get("/", async (req, res) => {
 
     // Fetch data for each player ID in the roster
     for (const playerId of user.roster.playerIDs) {
-      const playerData = await getSinglePlayer(playerId); // Assuming getSinglePlayer accepts a playerId
+      const playerData = await getSinglePlayer(playerId); 
       if (playerData) {
-        playerDataArray.push(playerData.data); // Assuming player data is in `data`
+        playerDataArray.push(playerData.data); // player data in `data`
       }
-      // Get player stats here
-      // Step1: Define the vars
-
-      // Step2: for each player get stats and add them to the
     }
     // Render the roster with the player data
     res.render("../views/roster/roster.ejs", {
