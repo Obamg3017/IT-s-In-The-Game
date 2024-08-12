@@ -35,7 +35,7 @@ router.get("/", async (req, res) => {
 
     // Fetch data for each player ID in the roster
     for (const playerId of user.roster.playerIDs) {
-      const playerData = await getSinglePlayer(playerId); 
+      const playerData = await getSinglePlayer(playerId);
       if (playerData) {
         playerDataArray.push(playerData.data); // player data in `data`
       }

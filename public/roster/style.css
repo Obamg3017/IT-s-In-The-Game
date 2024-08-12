@@ -1,149 +1,148 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #e0f0f0;
-    color: #004d4d; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e0f0f0;
+  color: #004d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 #roster-container {
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 75px;
-    max-width: 1100px;
-    width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 75px;
+  max-width: 1100px;
+  width: 100%;
 }
 
 #roster-container h1 {
-    color: #005a5a; 
-    margin-bottom: 20px;
-    font-size: 2em;
+  color: #005a5a;
+  margin-bottom: 20px;
+  font-size: 2em;
 }
 
 .message {
-    color: #d9534f; 
-    font-weight: bold;
-    margin-bottom: 20px;
+  color: #d9534f;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 #roster-details {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #stats-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 .search-link {
-    display: inline-block;
-    margin-bottom: 20px;
-    color: #005a5a;
-    text-decoration: none;
-    font-weight: bold;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #005a5a;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .search-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 h2:hover {
-    text-decoration:underline;
+  text-decoration: underline;
 }
 
-input{
-    font-size: medium;
-    text-align: center;
+input {
+  font-size: medium;
+  text-align: center;
 }
 
 #players-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
 }
 
 .player-card {
-    background-color: #e0f0f0; 
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  background-color: #e0f0f0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .player-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .player-card h3 {
-    color: #008080; 
-    margin-bottom: 5px;
+  color: #008080;
+  margin-bottom: 5px;
 }
 
 .player-card p {
-    margin: 5px 0;
-    color: #004d4d; 
+  margin: 5px 0;
+  color: #004d4d;
 }
 
 input[type="text"] {
-    width: 300px; 
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
 }
 
 .action-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
 }
 
 .delete-button {
-    background-color: #d9534f; 
-    color: #fff;
-    margin-top: 20px; 
+  background-color: #d9534f;
+  color: #fff;
+  margin-top: 20px;
 }
 
 .update-button {
-    background-color: #367689; 
-    color: #fff;
+  background-color: #367689;
+  color: #fff;
 }
 
 .action-button:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 @media (max-width: 600px) {
-    #players-grid {
-        grid-template-columns: 1fr; 
-    }
+  #players-grid {
+    grid-template-columns: 1fr;
+  }
 
-    #stats-container {
-        flex-direction: column;
-        align-items: center;
-    }
+  #stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #stats-container p {
-        margin-bottom: 10px;
-    }
+  #stats-container p {
+    margin-bottom: 10px;
+  }
 
-    #roster-container{
-        margin-top: 50px;
-    }
+  #roster-container {
+    margin-top: 50px;
+  }
 }
-

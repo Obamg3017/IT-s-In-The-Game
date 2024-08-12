@@ -17,7 +17,7 @@
     <div id="container">
         <h1 id="player-search-title">Search NBA Player</h1>
         <form id="player-search-form" action="/players/search" method="GET">
-            <input type="text" name="search" id="search-input" placeholder="Enter player's name" required>
+            <input type="text" autocomplete="off" name="search" id="search-input" placeholder="Enter player's name" required>
             <button type="submit" id="search-button">Find Player!</button>
         </form>
 
@@ -38,7 +38,7 @@
                         <p class="player-detail">Team: <%= player.team.full_name %> (<%= player.team.abbreviation %>)
                         </p>
                         <form action="/players" method="POST" class="add-player-form">
-                            <input type="hidden" name="playerId" value="<%= player.id %>">
+                            <input type="hidden" autocomplete="off" name="playerId" value="<%= player.id %>">
                             <button type="submit" class="add-player-button">Add Player</button>
                         </form>
                     </div>

@@ -11,11 +11,11 @@
 </head>
 
 <body>
-<header>
-    <%- include('../partials/navbar') %>
-</header>
+    <header>
+        <%- include('../partials/navbar') %>
+    </header>
     <div id="roster-container">
-        
+
         <h1>
             <% if (roster) { %>
                 <%= roster.name %>
@@ -32,7 +32,7 @@
                 <% if (players && players.length> 0) { %>
                     <div id="roster-details">
                         <form action="/roster?_method=PUT" method="POST">
-                            <input type="text" placeholder="enter new roster name" name="rosterName" required>
+                            <input type="text" autocomplete="off" placeholder="enter new roster name" name="rosterName" required>
                             <button class="action-button update-button" type="submit">Update The Name Of Your
                                 Roster</button>
                         </form>

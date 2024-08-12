@@ -1,43 +1,43 @@
-import express from 'express';
-import bcrypt from 'bcrypt';
-import User from '../models/user.js'
+import express from "express";
+import bcrypt from "bcrypt";
+import User from "../models/user.js";
 
 const authRouter = express.Router();
 
-authRouter.get('/sign-up', async (req, res)=>{
-    res.render('auth/sign-up.ejs');
+authRouter.get("/sign-up", async (req, res) => {
+  res.render("auth/sign-up.ejs");
 });
 
-authRouter.get('/sign-in', async (req, res)=>{
-    res.render('auth/sign-in.ejs');
+authRouter.get("/sign-in", async (req, res) => {
+  res.render("auth/sign-in.ejs");
 });
 
-authRouter.get('/sign-out', async (req, res)=>{
-    req.session.destroy()
-    res.redirect('/')
+authRouter.get("/sign-out", async (req, res) => {
+  req.session.destroy();
+  res.redirect("/");
 });
 
-authRouter.post('/sign-up', async (req, res)=>{
-    const user = await User.findOne({ username: req.body.username});
+authRouter.post("/sign-up", async (req, res) => {
+  const user = await User.findOne({ username: req.body.username });
 
-    if(user){
-        res.send("User already exists");
-    }
+  if (user) {
+    res.send("User already exists");
+  }
 
-    if(req.body.password !== req.body.confirmPassword){
-        res.send("Password does not match Confirm Password")
-    }
+  if (req.body.password !== req.body.confirmPassword) {
+    res.send("Password does not match Confirm Password");
+  }
 
-    const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-    req.body.password = hashedPassword;
+  const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+  req.body.password = hashedPassword;
 
-    const newUser = await User.create(req.body)
+  const newUser = await User.create(req.body);
 
-    if(newUser){
-        res.redirect('/auth/sign-in')
-    }else {
-        res.send("Error creating a user")
-    }
+  if (newUser) {
+    res.redirect("/auth/sign-in");
+  } else {
+    res.send("Error creating a user");
+  }
 });
 
 authRouter.post("/sign-in", async (req, res) => {
@@ -55,7 +55,7 @@ authRouter.post("/sign-in", async (req, res) => {
       res.send("Error, the password was wrong!");
     }
 
-    req.session.user = user
+    req.session.user = user;
 
     res.redirect("/");
   } catch (error) {
@@ -63,4 +63,4 @@ authRouter.post("/sign-in", async (req, res) => {
   }
 });
 
-export default authRouter
+export default authRouter;

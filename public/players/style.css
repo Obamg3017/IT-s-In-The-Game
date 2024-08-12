@@ -1,168 +1,167 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 95px;
-    font-family: Arial, sans-serif;
-    background-color: #e0f0f0; 
-    color: #004d4d; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px; 
+  margin: 95px;
+  font-family: Arial, sans-serif;
+  background-color: #e0f0f0;
+  color: #004d4d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 #container {
-    text-align: center;
-    width: 100%;
-    max-width: 1200px; 
-    margin: auto;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 h1 {
-    color: #008080;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+  color: #008080;
+  font-size: 2.5em;
+  margin-bottom: 20px;
 }
 
 form {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 input[type="text"] {
-    padding: 10px;
-    width: 80%;
-    max-width: 400px;
-    border: 2px solid #006666;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  padding: 10px;
+  width: 80%;
+  max-width: 400px;
+  border: 2px solid #006666;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 button[type="submit"] {
-    background-color: #008080; 
-    color: white; 
-    border: 3px solid #006666;
-    padding: 15px 25px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: medium;
+  background-color: #008080;
+  color: white;
+  border: 3px solid #006666;
+  padding: 15px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-size: medium;
 }
 
 button[type="submit"]:hover {
-    background-color: #006666; 
-    border-color: #004d4d; 
+  background-color: #006666;
+  border-color: #004d4d;
 }
 
 div {
-    margin-bottom: 20px;
-    padding: 50px;
-    background-color: #e0f0f0; 
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 50px;
+  background-color: #e0f0f0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #008080; 
-    font-size: 2em;
-    margin-bottom: 10px;
+  color: #008080;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 p {
-    color: #004d4d; 
-    margin-bottom: 5px;
-    font-size: x-large;
+  color: #004d4d;
+  margin-bottom: 5px;
+  font-size: x-large;
 }
 
 input[type="hidden"] {
-    display: none;
+  display: none;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        margin: 20px;
-        padding: 10px; 
-    }
+  body {
+    margin: 20px;
+    padding: 10px;
+  }
 
-    h1 {
-        font-size: 1.8em; 
-        margin-bottom: 15px; 
-    }
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
 
-    form {
-        width: 100%;
-        margin-bottom: 20px; 
-    }
+  form {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-    input[type="text"] {
-        width: 100%; 
-        text-align: center;
-        padding: 8px; 
-        font-size: 1em; 
-    }
+  input[type="text"] {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    font-size: 1em;
+  }
 
-    button[type="submit"] {
-        width: 100%;
-        padding: 12px; 
-        font-size: 1em; 
-    }
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+  }
 
-    div {
-        padding: 20px; 
-        margin: 5px 0; 
-    }
+  div {
+    padding: 20px;
+    margin: 5px 0;
+  }
 
-    h2 {
-        font-size: 1.5em; 
-    }
+  h2 {
+    font-size: 1.5em;
+  }
 
-    p {
-        font-size: large; 
-    }
+  p {
+    font-size: large;
+  }
 
-    #container{
-        margin-top: 250px;
-    }
+  #container {
+    margin-top: 250px;
+  }
 }
 
 @media (max-width: 480px) {
-    body {
-        margin: 15px; 
-        padding: 5px; 
-    }
+  body {
+    margin: 15px;
+    padding: 5px;
+  }
 
-    h1 {
-        font-size: 1.5em; 
-    }
+  h1 {
+    font-size: 1.5em;
+  }
 
-    form {
-        margin-bottom: 15px; 
-    }
+  form {
+    margin-bottom: 15px;
+  }
 
-    input[type="text"] {
-        padding: 6px; 
-    }
+  input[type="text"] {
+    padding: 6px;
+  }
 
-    button[type="submit"] {
-        padding: 10px;
-        font-size: 0.9em; 
-    }
+  button[type="submit"] {
+    padding: 10px;
+    font-size: 0.9em;
+  }
 
-    div {
-        padding: 15px;
-      
-    }
+  div {
+    padding: 15px;
+  }
 
-    h2 {
-        font-size: 1.2em; 
-    }
+  h2 {
+    font-size: 1.2em;
+  }
 
-    p {
-        font-size: medium; 
-    }
+  p {
+    font-size: medium;
+  }
 }

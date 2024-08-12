@@ -26,8 +26,6 @@ router.post("/", async (req, res) => {
   try {
     const { playerId } = req.body;
     const sessionUser = req.session.user;
-    console.log(sessionUser);
-    console.log(playerId);
 
     // Find the user by their ID.
     if (!sessionUser) {
@@ -42,7 +40,7 @@ router.post("/", async (req, res) => {
 
     // Fetch player stats.
     const playerStats = await getPlayerStats(playerId);
-    console.log(playerStats)
+
     if (
       !playerStats ||
       !Array.isArray(playerStats.data) ||
@@ -52,7 +50,6 @@ router.post("/", async (req, res) => {
     }
 
     const { reb = 0, ast = 0, pts = 0 } = playerStats.data[0]; // Extracting the stats
-
 
     console.log(playerStats.data[0]);
     // Check if the user has a roster, if not, create one
@@ -72,15 +69,14 @@ router.post("/", async (req, res) => {
       user.roster = savedRoster._id;
     } else {
       // If the roster already exists, just add the player ID and update stats
-      if(user.roster.playerIDs.length >= 5){
-      return res.status(404).json({ error: "You Have Added The Maximum Amount Of Players" });
-      //add alert here once you get go ahead from instructor
-
-      }
-      if (user.roster.playerIDs.includes(playerId)) {
+      if (user.roster.playerIDs.length >= 5) {
         return res
           .status(404)
-          .json({ error: "This Player is already added" });
+          .json({ error: "You Have Added The Maximum Amount Of Players" });
+        //add alert here once you get go ahead from instructor
+      }
+      if (user.roster.playerIDs.includes(playerId)) {
+        return res.status(404).json({ error: "This Player is already added" });
         //add alert here once you get go ahead from instructor
       }
       user.roster.playerIDs.push(playerId);
@@ -105,14 +101,13 @@ router.post("/", async (req, res) => {
   }
 });
 
-
 //Resources that were referenced for this project
 // 1. https://www.youtube.com/watch?v=zBTPDAh8ABM&list=PL6u82dzQtlfvJoAWdyf5mUxPQRnNKCMGt
 // 2. https://www.youtube.com/watch?v=EkQc-8uzxIA
 // 3. Stack Overflow
 // 4. Reading Documentation on api website https://docs.balldontlie.io/
-// 5. ChatGPT for explaining how to implement API and to also add total stats in roster.ejs 
-// 6. Reaching out for help with GA staff/instructor 
-// 7. Reaching out for help in communities that I am a part of. ie: BIT, Code & Coffee, and Brilliant-Black-Minds 
+// 5. ChatGPT for explaining how to implement API and to also add total stats in roster.ejs
+// 6. Reaching out for help with GA staff/instructor
+// 7. Reaching out for help in communities that I am a part of. ie: BIT, Code & Coffee, and Brilliant-Black-Minds
 // 8. https://www.youtube.com/watch?v=AGWwa25ZlRY (assisted me with try & catch/res.status(404) error handling)
 export default router;

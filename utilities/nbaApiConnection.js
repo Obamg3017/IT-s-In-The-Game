@@ -37,14 +37,14 @@ const getSinglePlayer = async (playerId) => {
 
 // GET /stats
 const getPlayerStats = async (playerID) => {
-  console.log(playerID)
+  console.log(playerID);
   const path = `/season_averages?season=2023&player_ids[]=${playerID}`;
   const response = await fetch(baseUrl + path, {
     headers: {
       Authorization: process.env.NBA_API_KEY,
     },
   });
-  console.log(response)
+  console.log(response);
   return response.json();
 };
 

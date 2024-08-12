@@ -11,7 +11,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 
-
 dotenv.config();
 const app = express();
 
@@ -40,8 +39,6 @@ app.use(
     saveUninitialized: true,
   })
 );
-
-
 
 //Route
 
