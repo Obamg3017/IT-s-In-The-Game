@@ -20,7 +20,7 @@
             <% if (roster) { %>
                 <%= roster.name %>
                     <% } else { %>
-                        Your NBA Roster
+                        Your NBA Fantasy Roster
                         <% } %>
         </h1>
 
@@ -29,7 +29,7 @@
                 <%= message %>
             </p>
             <% } else { %>
-                <% if (players && players.length> 0) { %>
+                <% if (players && players.length > 0) { %>
                     <div id="roster-details">
                         <form action="/roster?_method=PUT" method="POST">
                             <input type="text" autocomplete="off" placeholder="enter new roster name" name="rosterName" required>

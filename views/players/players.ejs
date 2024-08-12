@@ -15,14 +15,14 @@
         <%- include('../partials/navbar1') %>
     </header>
     <div id="container">
-        <h1 id="player-search-title">Search NBA Player</h1>
+        <h1 id="player-search-title">Search NBA Players</h1>
         <form id="player-search-form" action="/players/search" method="GET">
             <input type="text" autocomplete="off" name="search" id="search-input" placeholder="Enter player's name" required>
             <button type="submit" id="search-button">Find Player!</button>
         </form>
 
         <div id="players-list">
-            <% if (players && players.length> 0) { %>
+            <% if (players && players.length > 0) { %>
                 <% players.forEach(function(player) { %>
                     <div class="player-card">
                         <h2 class="player-name">
@@ -44,7 +44,7 @@
                     </div>
                     <% }); %>
                         <% } else { %>
-                            <p id="no-players-found">No players found.</p>
+                            <p id="no-players-found">No Players Found.</p>
                             <% } %>
         </div>
     </div>
