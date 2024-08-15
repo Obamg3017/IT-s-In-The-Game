@@ -10,6 +10,7 @@ import rosterController from "./controllers/roster.js";
 import path from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
+import MongoStore from "connect-mongo"; // Import MongoStore
 
 dotenv.config();
 const app = express();
@@ -34,9 +35,10 @@ app.use(morgan("dev"));
 
 app.use(
   session({
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   })
 );
 
