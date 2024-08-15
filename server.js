@@ -57,6 +57,12 @@ app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
 
+const port1 = process.env.PORT || "3000";
+app.listen(port, () => {
+  console.log(`Listening on port ${port1}`);
+});
+
+
 
 // import express from "express";
 // import mongoose from "mongoose";
