@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="homepage/style.css">
-    <link rel="stylesheet" href="partials/homepage/style.css">
+    <link rel="stylesheet" href="homePage/style.css">
+    <link rel="stylesheet" href="../partials/homePage/style.css">
 </head>
 
 <body>
     <div id="container">
         <div id="main-container">
             <% if (user) { %>
+             
                 <header>
                     <%- include('partials/navbar') %>
                 </header>
@@ -35,6 +36,7 @@
                 <div id="search-container">
                     <a href="/players" class="button-link"><button id="search-button">Search Players</button></a>
                 </div>
+               
                 <% } else { %>
                     <h2 id="welcome-message">IT'S IN THE GAME</h2>
                     <div id="auth-links">
