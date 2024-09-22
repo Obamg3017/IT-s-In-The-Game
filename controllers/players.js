@@ -26,7 +26,6 @@ router.post("/", async (req, res) => {
   try {
     const { playerId } = req.body;
     const sessionUser = req.session.user;
-
     // Find the user by their ID.
     if (!sessionUser) {
       return res.status(404).json({ error: "User not found" });
