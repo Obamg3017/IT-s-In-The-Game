@@ -73,8 +73,8 @@ body,
 /* Responsive Design */
 @media (max-width: 768px) {
   #main-nav {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+   flex-direction: column;
   }
 
   #nav-container {
@@ -95,18 +95,14 @@ body,
   }
 
   #sign-out-container {
-    margin-right: 10px;
-    align-self: flex-start;
     display: flex;
-    flex-direction: row;
-    margin-bottom: 1px;
-    margin-top: -40px;
+    justify-content: center;
+    flex-direction: column;
   }
 
   #sign-out-link {
-    align-self: flex-start;
-    margin-bottom: 10px;
-    align-items: flex-start;
+   display: flex;
+   justify-content: end;
   }
 }
 
@@ -116,11 +112,11 @@ body,
     padding: 8px 15px;
   }
 
-  #sign-out-link {
-    padding: 5px 8px;
-  }
-
   #main-nav {
     padding: 10px;
   }
+#sign-out-container{
+  padding: 0 50px 0 50px;
+}
+  
 }

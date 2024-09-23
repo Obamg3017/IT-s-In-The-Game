@@ -6,7 +6,7 @@
 
 
 ## Getting Started
-- "Insert Link To Deployed App"
+- ### [Deployed Website](https://it-s-in-the-game-58058616fcc2.herokuapp.com/)
 
 ## [Wire Frame](https://www.figma.com/design/9eQTQIL1eRyrZ7O7u3Wkj3/IT'S-IN-THE-GAME?node-id=0-1&t=a9y9u0bUY5OasAPF-0)
 ![winningView](./public/welcome.png)
