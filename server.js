@@ -55,7 +55,7 @@ app.use("/auth", authController);
 app.use("/players", playerController);
 app.use("/roster", rosterController);
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
 
